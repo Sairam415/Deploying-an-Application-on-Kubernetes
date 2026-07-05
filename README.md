@@ -47,12 +47,9 @@ kubectl get pods
 ```
 
 ### Expected output:
-Expected output:
-
 ```text
 NAME                                   READY   STATUS    RESTARTS   AGE
 k8s-simple-deployment-xxxxx           1/1     Running   0          1m
-
 ```
 
 ### Check Service
