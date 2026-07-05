@@ -10,6 +10,10 @@ It deploys a sample containerized application and exposes it using a Kubernetes 
 
 ---
 
+## Architecture
+
+User → Kubernetes Service → Pods (Deployment) → nginx container
+
 ## Repository Structure
 
 ```bash
@@ -74,3 +78,8 @@ You can replace it with your own Docker image in deployment.yaml
 
 ```md
 This project was created to understand Kubernetes Deployment and Service basics using a minimal nginx container.
+```
+
+```## Version
+
+v1.0 - Initial Kubernetes deployment using nginx
