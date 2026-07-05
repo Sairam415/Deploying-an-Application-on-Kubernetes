@@ -68,12 +68,11 @@ minikube service k8s-simple-service
 kubectl rollout restart deployment k8s-simple-deployment
 ```
 
-Notes
-Default image used: nginx:latest. You can replace it with your own Docker image in deployment.yaml
+## Notes
 
-```md
-This project was created to understand Kubernetes Deployment and Service basics using a minimal nginx container.
-```
+1. Default image used: `nginx:latest`
+2. You can replace it with your own Docker image in `deployment.yaml`
+3. This project was created to understand Kubernetes Deployment and Service basics using a minimal nginx container.
 
 ## Version
 ```
