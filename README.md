@@ -71,3 +71,6 @@ kubectl rollout restart deployment k8s-simple-deployment
 Notes
 Default image used: nginx:latest
 You can replace it with your own Docker image in deployment.yaml
+
+```md
+This project was created to understand Kubernetes Deployment and Service basics using a minimal nginx container.
