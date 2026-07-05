@@ -1,15 +1,19 @@
-# Deploying an Application on Kubernetes
+# k8s-simple-deployment-demo
 
-## Project Overview
+## Overview
 
-This repository demonstrates how to deploy a containerized application on a Kubernetes cluster using Kubernetes Deployment and Service manifests.
+This project demonstrates a simple Kubernetes deployment using a Deployment and Service.
 
-The Deployment manages application Pods, while the Service exposes the application so it can be accessed within or outside the cluster.
+It deploys a sample containerized application and exposes it using a Kubernetes Service.
+
+> This is a sample Kubernetes deployment project using a public or custom container image.
+
+---
 
 ## Repository Structure
 
-```text
-Deploying-an-Application-on-Kubernetes/
+```bash
+.
 ├── README.md
 ├── deployment.yaml
 └── service.yaml
@@ -17,96 +21,53 @@ Deploying-an-Application-on-Kubernetes/
 
 ## Prerequisites
 
-Before deploying the application, ensure you have:
-
-* Docker installed
-* Kubernetes cluster (Minikube, Kind, Docker Desktop Kubernetes, or a cloud cluster)
-* kubectl installed and configured
-* A Docker image pushed to Docker Hub
-
-## Kubernetes Manifests
-
-### deployment.yaml
-
-Creates a Deployment that:
-
-* Runs two replicas of the application
-* Pulls the Docker image from Docker Hub
-* Exposes container port 3000
-* Configures CPU and memory resources
-* Includes readiness and liveness probes
-
-### service.yaml
-
-Creates a Service that:
-
-* Exposes the application
-* Routes traffic to the running Pods
-* Maps port 80 to container port 3000
+- Kubernetes cluster (Minikube / Kind / cloud)
+- kubectl installed and configured
+- Docker image available (or using nginx for testing)
 
 ## Deployment Steps
 
-Apply the Deployment:
+### 1. Apply Deployment
 
 ```bash
 kubectl apply -f deployment.yaml
 ```
 
-Apply the Service:
+## 2. Apply Service
 
 ```bash
 kubectl apply -f service.yaml
 ```
 
-## Verify the Deployment
-
-Check the Deployment:
-
-```bash
-kubectl get deployments
-```
-
-Check the Pods:
+### Verify Deployment
+## Check Pods
 
 ```bash
 kubectl get pods
 ```
 
-Check the Service:
+### Expected output:
 
+NAME                                   READY   STATUS    RESTARTS   AGE
+k8s-simple-deployment-xxxxx           1/1     Running   0          1m
+k8s-simple-deployment-xxxxx           1/1     Running   0          1m
+
+### Check Service
 ```bash
 kubectl get services
 ```
 
-Describe the Deployment:
+### Access Application (Minikube)
 
 ```bash
-kubectl describe deployment kubernetes-demo-deployment
+minikube service k8s-simple-service
 ```
 
-## Updating the Application
-
-After pushing a new Docker image, restart the Deployment:
-
+### Update Deployment
 ```bash
-kubectl rollout restart deployment kubernetes-demo-deployment
+kubectl rollout restart deployment k8s-simple-deployment
 ```
 
-## Cleaning Up
-
-Delete all deployed resources:
-
-```bash
-kubectl delete -f service.yaml
-kubectl delete -f deployment.yaml
-```
-
-## Learning Outcomes
-
-This project demonstrates:
-
-* Creating Kubernetes Deployments
-* Creating Kubernetes Services
-* Deploying containerized applications
-* Managing Pods using kubectl
-* Exposing applications within a Kubernetes cluster
+Notes
+Default image used: nginx:latest
+You can replace it with your own Docker image in deployment.yaml
