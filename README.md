@@ -2,11 +2,7 @@
 
 ## Overview
 
-This project demonstrates a simple Kubernetes deployment using a Deployment and Service.
-
-It deploys a sample containerized application and exposes it using a Kubernetes Service.
-
-> This is a sample Kubernetes deployment project using a public or custom container image.
+This project is a minimal Kubernetes deployment example using nginx to understand how Deployment and Service objects work together.
 
 ---
 
