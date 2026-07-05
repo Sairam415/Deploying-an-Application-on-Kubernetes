@@ -40,7 +40,7 @@ kubectl apply -f service.yaml
 ```
 
 ### Verify Deployment
-## Check Pods
+# Check Pods
 
 ```bash
 kubectl get pods
